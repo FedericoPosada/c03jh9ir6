@@ -1,5 +1,5 @@
 class ActorsController < ApplicationController
-	def actors
+	def index
 		@actors=Actor.all
 	end
 
@@ -10,7 +10,7 @@ class ActorsController < ApplicationController
 	def create
 		@actor =Actor.new(actor_params)
 		if @actor.save
-			redirect_to '/actors', notice:"El actor se creó con éxito"
+			redirect_to '/actors'
 		else
 			render :new
 		end
